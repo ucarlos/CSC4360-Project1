@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana;
+}
+
+.sprite{
+    position:absolute;
+    background:url("./sheet/walksheet.png");
+	top:60%;
+    left:45%;
+    z-index:2;
+    width:155px;
+    height:200px;
+    animation: 1s run steps(15, end) infinite;
+    
+}
+
+.sprite:active{
+    background:url("./alcuard_sprites/jump.gif");
+    position:fixed;
+    top:54%;
+    left:45%;
+    animation: jump 1s cubic-bezier(0.90, 0.20, 0.25, 0.85);
+
+}
+.overlay{
+    position:fixed;
+    background:url("./wallpapers/clock2.png");
+    background-size:cover;
+    animation:250s scroll infinite linear;
+    top:14.5%;
+    left:16.5%;
+    width:67%;
+    height:80%;
+    z-index:1;
+}
+
+.gamebar{
+    background-color:red;
+    width:100%;
+    height:100%;
+    background:url("./wallpapers/main_wallpaper.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+
+.score{
+    position:fixed;
+    top:7%;
+    left:45%;
+    width:100%;
+    height:22px;
+    color:white;
+	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    font-weight:bold;
+
+}
+#score1000{
+    width:22px;
+    height:20px;
+    background:url("score.png");
+    background-size:auto;
+    background-repeat:no-repeat;
+    animation: 1000s score100 infinite linear;
+    float:left;
+	
+}
+#score100{
+    width:22px;
+    height:20px;
+    background:url("score.png");
+    background-size:auto;
+    background-repeat:no-repeat;
+    animation: 100s score100 infinite linear;
+    float:left;
+}
+#score10{
+    width:22px;
+    height:20px;
+    background:url("score.png");
+    background-size:auto;
+    background-repeat:no-repeat;
+    animation: 10s score10 infinite linear;
+    float:left;
+}
+#score1{
+    width:22px;
+    height:20px;
+    background:url("score.png");
+    background-size:auto;
+    background-repeat:no-repeat;
+    animation: 1s score1 infinite linear;
+    float:left;
+
+}
+
+#instructions{
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align:center;
+    font-family:"black_chancery";
+    color:white;
+    font-size:18px;
+    padding-top:10px;
+}
+@keyframes jump{
+    100%{
+		top:50%;
+    }
+    50%{
+		top:25%;
+    }
+}
+@keyframes run{
+    100%{
+	background-position:-2670 0px;
+    }
+}
+
+@keyframes scroll{
+    100%{
+	background-position:-100000px 0px;
+    }
+}
+@keyframes score1000{
+    99%{background-position:0px -175px
+       }
+    100%{
+	background-position:0px -176px;
+    }
+}
+@keyframes score100{
+    99%{
+	background-position:0px -175px
+       }
+    100%{
+	background-position:0px -176px;
+	}
+}
+@keyframes score10{
+    99%{background-position:0px -175px
+       }
+    100%{
+	background-position:0px -176px;
+    }
+}
+@keyframes score1{
+    99%{background-position:0px -175px
+       }
+    100%{
+	background-position:0px -176px;
+    }
+}
+
+
+/* Added a Custom gothic font: */
+@font-face{
+    font-family:"black_chancery";
+    src: url("./custom_font/black_chancery.ttf");
+
+}
+
+
